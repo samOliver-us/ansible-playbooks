@@ -3,6 +3,7 @@
  - name: Update all deb based servers
    hosts: all
    become: yes
+   become_method: sudo
 
    tasks: 
     - name: Ansible Update Cache and Upgrade all Packages
@@ -11,9 +12,7 @@
         name: "*"
         state: latest
         update_cache: yes
-        become_user: root
 
     - name: Display the last line of the previous task to check the stats
       debug:
         msg:  "{{updatesys.stdout_lines|last}}"
-        become_user: root
