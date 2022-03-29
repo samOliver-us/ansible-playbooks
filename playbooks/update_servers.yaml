@@ -4,7 +4,7 @@
    hosts: all
    become: yes
    become_user: root
-   become_method: sudu
+   become_method: sudo
 
    tasks: 
     - name: Ansible Update Cache and Upgrade all Packages
