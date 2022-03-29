@@ -3,6 +3,8 @@
  - name: Update all deb based servers
    hosts: all
    become: yes
+   become_user: root
+   become_method: sudu
 
    tasks: 
     - name: Ansible Update Cache and Upgrade all Packages
