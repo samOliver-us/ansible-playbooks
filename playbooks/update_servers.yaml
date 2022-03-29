@@ -3,7 +3,6 @@
  - name: Update all deb based servers
    hosts: all
    become: yes
-   become_user: root
    become_method: sudo
 
    tasks: 
