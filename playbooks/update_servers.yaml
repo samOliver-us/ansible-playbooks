@@ -3,8 +3,7 @@
  - name: Update all deb based servers
    hosts: all
    become: yes
-   become_method: sudo
-
+   
    tasks: 
     - name: Ansible Update Cache and Upgrade all Packages
       register: updatesys
