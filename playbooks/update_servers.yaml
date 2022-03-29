@@ -1,16 +1,21 @@
 # update.yml 
 ---
  - name: Update all deb based servers
-   hosts: all
    become: yes
+   hosts: all
 
-   tasks: 
-    - name: Ansible Update Cache and Upgrade all Packages
+   tasks:
+
+    - name: Update all Packages
+      apt:
+        update_cache: yes 
+
+    - name: Upgrade all Packages
       register: updatesys
       apt:
         name: "*"
         state: latest
-        update_cache: yes
+
 
     - name: Display the last line of the previous task to check the stats
       debug:
