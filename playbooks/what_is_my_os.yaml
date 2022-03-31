@@ -1,6 +1,6 @@
 ---
 
-- name: print out operating system
+ - name: print out operating system
    hosts: all
    gather_facts: True
    tasks:
