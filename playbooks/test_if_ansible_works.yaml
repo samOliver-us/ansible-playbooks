@@ -2,5 +2,6 @@
 - hosts: all
   gather_facts: false
   connection: ansible.netcommon.network_cli
-
+  tasks:
+   - debug: var=ansible_distribution
 
