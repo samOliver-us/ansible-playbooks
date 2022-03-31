@@ -1,14 +1,13 @@
-# update.yml 
+# update.yml
 ---
- - name: Update all deb based servers
-   become: yes
-   hosts: all
+- name: Update all deb based servers
+  become: yes
+  hosts: all
 
-   tasks:
-
+  tasks:
     - name: Update all Packages
       apt:
-        update_cache: yes 
+        update_cache: yes
 
     - name: Upgrade all Packages
       register: updatesys
@@ -16,7 +15,6 @@
         name: "*"
         state: latest
 
-
     - name: Display the last line of the previous task to check the stats
       debug:
-        msg:  "{{updatesys.stdout_lines|last}}"
+        msg: "{{updatesys.stdout_lines|last}}"
