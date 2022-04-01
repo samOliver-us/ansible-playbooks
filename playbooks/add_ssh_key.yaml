@@ -4,7 +4,7 @@
   hosts: all
 
   tasks:
-    - name: Set authorized keys taken from github.
-      user: sam
-      state: present
-      key: https://github.com/samOliver-us.keys
+  - name: Set authorized keys taken from github.
+    user: sam
+    state: present
+    key: https://github.com/samOliver-us.keys
