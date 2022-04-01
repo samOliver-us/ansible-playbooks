@@ -1,0 +1,10 @@
+---
+- name: Add SSH key to server
+  become: yes
+  hosts: all
+
+  tasks:
+    - name: Set authorized keys taken from github.
+      user: sam
+      state: present
+      key: https://github.com/samOliver-us.keys
