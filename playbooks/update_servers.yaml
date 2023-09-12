@@ -2,6 +2,7 @@
 ---
 - name: Update all deb based servers
   become: yes
+  become_user: root
   hosts: all
 
   tasks:
